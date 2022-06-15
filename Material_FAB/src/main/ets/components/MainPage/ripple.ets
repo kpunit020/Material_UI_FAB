@@ -16,9 +16,9 @@
 
 @Component
 export struct rippleUtils {
-  rippleDuration : number = 300
-  unbounded : boolean = false
-  color: ResourceColor = Color.Red // fill color of the circle
+  rippleDuration : number
+  unbounded : boolean
+  color: ResourceColor  // fill color of the circle
 
   private rippleSize: number = 10
   private opacity: number = 0.4
@@ -36,6 +36,11 @@ export struct rippleUtils {
   @Link size: {width: number, height : number } // size of ripple container
   @Link border: BorderOptions // radius of ripple container
 
+  aboutToAppear(){
+    this.rippleDuration = this.rippleDuration? this.rippleDuration : 300
+    this.unbounded = this.unbounded? this.unbounded : false
+    this.color = this.color? this.color : Color.White
+  }
 
   private ripple_animation() {
     // position coordinates for the circle

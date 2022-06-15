@@ -19,27 +19,25 @@ import { rippleUtils } from './ripple'
 
 @Component
 export struct FAB_regular {
-  fabSize: string = 'medium'  // use pre-defined sizes
+  fabSize: string  // use pre-defined sizes
 
   // icon attributes
-  fabIcon: ResourceStr = $r('app.media.add_icon')
+  fabIcon: ResourceStr
   iconSize: SizeOptions
 
   //container attributes
-  position: Position = { x: 0, y: 0 }
-  backgroundColor: ResourceColor = Color.Blue
-  @State border: BorderOptions = {}  // set custom border config
-  fabCustomSize: SizeOptions // set custom container size
+  position: Position
+  backgroundColor: ResourceColor
+  @State border: BorderOptions = {}
+  fabCustomSize: SizeOptions
   @State private containerSize: SizeOptions = {}
   margin : Margin
 
-  @State private clickCoordinates: Position = { x: 0, y: 0 } // click event coordinates
+  @State private clickCoordinates: Position = { x: 0, y: 0 }
   @State private showRipple: boolean = false // for ripple rendering control
-  rippleColor: ResourceColor = Color.White  // set custom ripple color
+  rippleColor: ResourceColor
 
-  onClick: (event?: ClickEvent) => void = (event) => {  // callback for onClick
-    console.log('FAB_regular clicked')
-  }
+  onClick: (event?: ClickEvent) => void
 
 
   // size specifications for different fab_regular
@@ -61,7 +59,21 @@ export struct FAB_regular {
     },
   }
 
+  private check_fabSize_type() {
+    if(this.fabSize != 'small' && this.fabSize != 'medium' && this.fabSize != 'large')
+            this.fabSize = 'medium'
+  }
+
   aboutToAppear() {
+    this.check_fabSize_type()
+
+    this.fabIcon = this.fabIcon? this.fabIcon : $r('app.media.add_icon')
+    this.position = this.position? this.position : { x: 0, y: 0 }
+    this.backgroundColor = this.backgroundColor? this.backgroundColor : Color.Blue
+    this.rippleColor = this.rippleColor? this.rippleColor : Color.White
+
+    this.onClick = this.onClick? this.onClick : (event) => {}
+
     this.border.radius = this.border.radius? this.border.radius : this.sizeSpecs[this.fabSize].borderRadius
 
     this.containerSize = (this.fabCustomSize) ? this.fabCustomSize : {
@@ -76,6 +88,7 @@ export struct FAB_regular {
                                                     }
   }
 
+  
   build() {
     Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
       Image(this.fabIcon)
@@ -93,7 +106,7 @@ export struct FAB_regular {
     .size(this.containerSize)
     .backgroundColor(this.backgroundColor)
     .border(this.border)
-    .zIndex(99999999)
+    .zIndex(Number.MAX_VALUE)
     .shadow({ radius: 30, color: Color.Gray, offsetY: 16 })
     .position(this.position)
     .margin(this.margin)

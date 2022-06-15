@@ -18,38 +18,57 @@ import { rippleUtils } from './ripple'
 
 @Component
 export struct FAB_extended {
+  // Icon attributes
   fabIcon: ResourceStr
-  iconPadding : Padding = {left : 20 , right : -8}
+  iconPadding : Padding
+  iconSize: SizeOptions
 
   // fab text attributes
   fabLabel: string | Resource
-  fontColor: ResourceColor  = Color.White
+  fontColor: ResourceColor
   fontStyle: FontStyle
-  fontSize: number | string | Resource = 24
-  fontWeight: FontWeight = FontWeight.Bold
-  fontFamily : string | Resource
-  textPadding : Padding = {left : 20, right : 20}
+  fontSize: number | string | Resource
+  fontWeight: FontWeight
+  textPadding : Padding
 
 
   // container Attributes
   @State border: BorderOptions = {}
-  backgroundColor: ResourceColor = Color.Blue
-  position: Position = { x: 0, y: 0 }
-  fabMaxWidth: number = 200
+  backgroundColor: ResourceColor
+  position: Position
+  fabMaxWidth: number
   @State private currFabSize: SizeOptions = { width: 80, height: 56 }
-  @State iconSize: SizeOptions = { width: 24, height: 24 }
   margin : Margin
 
   //ripple rendering control
-  @State showRipple: boolean = false
-  @State clickCoordinates: Position = { x: 0, y: 0 }
-  rippleColor: ResourceColor = Color.White
+  @State private showRipple: boolean = false
+  @State private clickCoordinates: Position = { x: 0, y: 0 }
+  rippleColor: ResourceColor
 
-  onClick: (event?: ClickEvent) => void = (event) => { // callback for onClick
-    console.log('FAB_extended clicked')
-  }
+  onClick: (event?: ClickEvent) => void // callback for onClick
 
+
+
+  /*
+  set values for all the properties
+   */
   aboutToAppear() {
+    this.iconPadding = this.iconPadding? this.iconPadding : {left : 20 , right : -8}
+    this.iconSize = this.iconSize? this.iconSize : { width: 24, height: 24 }
+
+    this.fontColor = this.fontColor? this.fontColor : Color.White
+    this.fontSize = this.fontSize? this.fontSize : 24
+    this.fontWeight = this.fontWeight? this.fontWeight : FontWeight.Bold
+    this.textPadding = this.textPadding? this.textPadding : {left : 20, right : 20}
+
+    this.backgroundColor = this.backgroundColor? this.backgroundColor : Color.Blue
+    this.position = this.position? this.position : { x: 0, y: 0 }
+    this.fabMaxWidth = this.fabMaxWidth? this.fabMaxWidth : 200
+
+    this.rippleColor = this.rippleColor? this.rippleColor : Color.White
+
+    this.onClick = this.onClick? this.onClick : (event) => {}
+
     this.border.radius = this.border.radius ? this.border.radius : 16
   }
 
@@ -67,7 +86,6 @@ export struct FAB_extended {
         .fontStyle(this.fontStyle)
         .fontSize(this.fontSize)
         .fontWeight(this.fontWeight)
-        .fontFamily(this.fontFamily)
         .textOverflow({ overflow: TextOverflow.Ellipsis })
         .maxLines(1)
         .margin(this.textPadding)
@@ -87,7 +105,7 @@ export struct FAB_extended {
     .height(56)
     .backgroundColor(this.backgroundColor)
     .border(this.border)
-    .zIndex(99999999)
+    .zIndex(Number.MAX_VALUE)
     .shadow({ radius: 30, color: Color.Gray, offsetY: 16 })
     .position(this.position)
     .margin(this.margin)

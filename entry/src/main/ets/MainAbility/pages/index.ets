@@ -1,3 +1,20 @@
+/*
+ * Copyright (C) 2020-21 Application Library Engineering Group
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
 import {FAB_extended, FAB_regular} from '@ohos/Material_FAB'
 
 @Entry
@@ -12,7 +29,6 @@ struct ListExample {
       Column() {
         List({ space: 20, initialIndex: 0 }) {
           ForEach(this.arr, (item) => {
-            
             ListItem() {
               Text('' + item)
                 .width('100%').height(100).fontSize(16)
@@ -38,47 +54,43 @@ struct ListExample {
         }).width('90%')
       }.width('100%')
 
-//      FAB_extended({
-//        fontColor : Color.White,
-//        fabIcon : $r('app.media.add_icon'),
-//        fabLabel : `Add`,
-//        onClick : () => {
-//          AlertDialog.show({message : "you clicked fab_extended"})
-//          console.log('fired from fab_extended')
-//        },
+      FAB_extended({
+        fabIcon : $r('app.media.add_icon'),
+        fabLabel : `Add`,
+        onClick : () => {
+          AlertDialog.show({message : "you clicked fab_extended"})
+        },
+        position : {x : 220, y : 670},
+        backgroundColor : Color.Red
+
+      })
 //
-//        position : {x : 20, y : 670},
-//      })
-//
-//      FAB_regular({
-//        fabIcon : $r('app.media.add_icon'),
-//        fabSize : "small",
-//        position : {x : 20, y : 50},
-//        onClick : (event) => {
-//          AlertDialog.show({message : "you clicked fab_small"})
-//          console.log('fired from fab_small')
-//        }
-//      })
+      FAB_regular({
+        fabIcon : $r('app.media.add_icon'),
+        fabSize : "small",
+        position : {x : 30, y : 70},
+        onClick : (event) => {
+          AlertDialog.show({message : "you clicked fab_small"})
+        },
+
+      })
 
       FAB_regular({
         fabIcon : $r('app.media.add_icon'),
-        //fabSize : "medium",
-        position : {x : 280, y:690},
+        fabSize : "medium",
+        position : {x : 280, y:70},
         backgroundColor : Color.Red,
         onClick : (event) => {
           AlertDialog.show({message : "you clicked fab_mid"})
-          console.log('fired from fab_mid')
         }
       })
 
-//      FAB_regular({
-//
-//        fabIcon : $r('app.media.add_icon'),
-//        fabSize : "large",
-//        backgroundColor : Color.Orange,
-//        position : {x: 230, y : 50},
-//
-//      })
+      FAB_regular({
+        fabIcon : $r('app.media.add_icon'),
+        fabSize : "large",
+        backgroundColor : Color.Orange,
+        position : {x: 20, y : 650},
+      })
     }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 })
   }
 }
