@@ -23,7 +23,6 @@ class CommonProperties {
   protected fabSize: SizeOptions = undefined
   protected backgroundColor: Color = Color.Blue
   protected border: BorderOptions = {}
-  protected margin: Margin = {}
   protected position: Position = {x : 0, y : 0}
 
   setFabIcon(fabIcon: ResourceStr): CommonProperties{
@@ -89,15 +88,6 @@ class CommonProperties {
 
   getBorder(): BorderOptions {
     return this.border
-  }
-
-  setMargin(margin: Margin): CommonProperties {
-    this.margin = (margin != null && margin != undefined)? margin : {}
-    return this
-  }
-
-  getMargin(): Margin {
-    return this.margin
   }
 
   setPosition(position: Position): CommonProperties {

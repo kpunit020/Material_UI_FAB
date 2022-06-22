@@ -43,7 +43,6 @@ export struct FAB_regular {
       .zIndex(Number.MAX_VALUE)
       .shadow({ radius: 30, color: Color.Gray, offsetY: 16 })
       .position(this.model.getPosition())
-      .margin(this.model.getMargin())
       .onClick((event) => {
         this.model.getRippleModel().setRippleStartPosition({
           x: event.x,

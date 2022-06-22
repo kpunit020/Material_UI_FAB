@@ -55,7 +55,6 @@ export struct FAB_extended {
     .zIndex(Number.MAX_VALUE)
     .shadow({ radius: 30, color: Color.Gray, offsetY: 16 })
     .position(this.model.getPosition())
-    .margin(this.model.getMargin())
     .onAreaChange((oldArea, newArea) => {
       this.model.setFabSize(newArea)
     })
