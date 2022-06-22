@@ -1,11 +1,10 @@
 /*
- * Copyright (C) 2021-22 Application Library Engineering Group
- *
+ * Copyright (c) 2022 Application Library Engineering Group.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +12,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-s
-import {FAB_extended, FAB_regular} from '@ohos/Material_FAB'
+
+
+
+import {FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel} from '@ohos/Material_FAB'
 
 @Entry
 @Component
 struct ListExample {
+  model_small : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.small)
+  model_medium : FabRegularModel.Model = new FabRegularModel.Model()
+  model_large : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.large)
+  model_extended : FabExtendedModel.Model = new FabExtendedModel.Model()
+
+  aboutToAppear() {
+    this.model_small.setPosition({x : 20, y : 30})
+    this.model_small.setBackgroundColor(Color.Green)
+
+    this.model_medium.setPosition({x : 290, y : 30})
+    this.model_medium.setBackgroundColor(Color.Red)
+
+    this.model_large.setPosition({x : 250, y : 630})
+    this.model_large.setBackgroundColor(Color.Orange)
+
+    this.model_extended.setPosition({x : 20, y : 630}).setFabIcon($r('app.media.add_icon'))
+    this.model_small.setBackgroundColor(Color.Green)
+  }
+
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   @State editFlag: boolean = false
   @State count : number = 1
@@ -53,43 +73,35 @@ struct ListExample {
         }).width('90%')
       }.width('100%')
 
-      FAB_extended({
-        fabIcon : $r('app.media.add_icon'),
-        fabLabel : `Add`,
-        onClick : () => {
-          AlertDialog.show({message : "you clicked fab_extended"})
-        },
-        position : {x : 220, y : 670},
-        backgroundColor : Color.Red
-
-      })
-//
       FAB_regular({
-        fabIcon : $r('app.media.add_icon'),
-        fabSize : "small",
-        position : {x : 30, y : 70},
+        model : this.model_small,
         onClick : (event) => {
-          AlertDialog.show({message : "you clicked fab_small"})
-        },
-
-      })
-
-      FAB_regular({
-        fabIcon : $r('app.media.add_icon'),
-        fabSize : "medium",
-        position : {x : 280, y:70},
-        backgroundColor : Color.Red,
-        onClick : (event) => {
-          AlertDialog.show({message : "you clicked fab_mid"})
+          AlertDialog.show({ message: 'You clicked small fab' })
         }
       })
 
       FAB_regular({
-        fabIcon : $r('app.media.add_icon'),
-        fabSize : "large",
-        backgroundColor : Color.Orange,
-        position : {x: 20, y : 650},
+        model : this.model_medium,
+        onClick : (event) => {
+          AlertDialog.show({ message: 'You clicked medium fab' })
+        }
       })
+
+      FAB_regular({
+        model : this.model_large,
+        onClick : (event) => {
+          AlertDialog.show({ message: 'You clicked large fab' })
+        }
+      })
+
+      FAB_extended({
+        model : this.model_extended,
+        onClick : (event) => {
+          AlertDialog.show({ message: 'You clicked extended fab' })
+        }
+      })
+
+
     }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding({ top: 5 })
   }
 }

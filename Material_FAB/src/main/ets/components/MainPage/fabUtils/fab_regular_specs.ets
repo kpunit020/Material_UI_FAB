@@ -13,14 +13,24 @@
  * limitations under the License.
  */
 
-import app from '@system.app';
-
-export default {
-  onCreate() {
-    app.setImageCacheCount(10)
-    console.info('Application onCreate')
+export var sizeSpecs: {
+  containerSize: SizeOptions,
+  iconSize: SizeOptions,
+  border: BorderOptions
+}[] = [
+  {
+    containerSize: { width: '40vp', height: '40vp' },
+    iconSize: { width: '24vp', height: '24vp' },
+    border: { radius: 12 }
   },
-  onDestroy() {
-    console.info('Application onDestroy')
+  {
+    containerSize: { width: '56vp', height: '56vp' },
+    iconSize: { width: '24vp', height: '24vp' },
+    border: { radius: 16 }
   },
-}
+  {
+    containerSize: { width: '96vp', height: '96vp' },
+    iconSize: { width: '36vp', height: '36vp' },
+    border: { radius: 28 }
+  },
+]
