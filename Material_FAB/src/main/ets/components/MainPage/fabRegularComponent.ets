@@ -16,7 +16,6 @@
 
 import {Ripple} from './ripple/ripple'
 import { FabRegularModel } from './fabUtils/fab_regular_model'
-import { FabType } from './fabUtils/fabTypes'
 
 @Component
 export struct FAB_regular {

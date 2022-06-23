@@ -21,16 +21,16 @@ export var sizeSpecs: {
   {
     containerSize: { width: '40vp', height: '40vp' },
     iconSize: { width: '24vp', height: '24vp' },
-    border: { radius: 12 }
+    border: { radius: '12vp' }
   },
   {
     containerSize: { width: '56vp', height: '56vp' },
     iconSize: { width: '24vp', height: '24vp' },
-    border: { radius: 16 }
+    border: { radius: '16vp' }
   },
   {
     containerSize: { width: '96vp', height: '96vp' },
     iconSize: { width: '36vp', height: '36vp' },
-    border: { radius: 28 }
+    border: { radius: '28vp' }
   },
 ]

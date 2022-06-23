@@ -23,8 +23,8 @@ import { FAB_regular, FAB_extended }  from '@ohos/Material_FAB'
 
 ## Screenshots
 
-![](images/sample_small_fab.gif)   ![](images/sample_medium_fab.gif)
-![](images/sample_large_fab.gif)   ![](images/sample_extended_fab.gif)
+![img.png](images/sample_small_fab.png)   ![img.png](images/sample_medium_fab.png)
+![img.png](images/sample_large_fab.png)   ![img.png](images/sample_extended_fab.png)
 
 ## <FAB_regular>
 

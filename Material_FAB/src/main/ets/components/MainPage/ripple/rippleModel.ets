@@ -16,19 +16,19 @@
 namespace RippleModel {
   const DEFAULT_RIPPLE_DURATION : number = 300
   const DEFAULT_IS_BOUNDED : boolean = true
-  const DEFAULT_RIPPLE_COLOR : Color = Color.White
+  const DEFAULT_RIPPLE_COLOR : ResourceColor = Color.White
   const DEFAULT_CIRCLE_SIZE : number = 10
   const DEFAULT_OPACITY : number = 0.4
   const DEFAULT_RIPPLE_SCALE : number = 0
   const DEFAULT_RIPPLE_START_POSITION : Position = { x: 0, y: 0 }
-  const DEFAULT_RIPPLE_CONTAINER_SIZE : SizeOptions = { height: 56, width: 96 }
+  const DEFAULT_RIPPLE_CONTAINER_SIZE : SizeOptions = { height: '56vp', width: '96vp' }
   const DEFAULT_BORDER : BorderOptions = {}
   const DEFAULT_Z_INDEX : number = 2
 
   export class Model {
     private rippleDuration: number = DEFAULT_RIPPLE_DURATION
     private isBounded: boolean = DEFAULT_IS_BOUNDED
-    private rippleColor: Color = DEFAULT_RIPPLE_COLOR
+    private rippleColor: ResourceColor = DEFAULT_RIPPLE_COLOR
     private circleSize: number = DEFAULT_CIRCLE_SIZE
     private opacity: number = DEFAULT_OPACITY
     private rippleScale: number = DEFAULT_RIPPLE_SCALE
@@ -55,11 +55,11 @@ namespace RippleModel {
       return this
     }
 
-    getRippleColor(): Color {
+    getRippleColor(): ResourceColor {
       return this.rippleColor
     }
 
-    setRippleColor(rippleColor : Color) : Model {
+    setRippleColor(rippleColor : ResourceColor) : Model {
       this.rippleColor = (rippleColor != null && rippleColor != undefined)? rippleColor : DEFAULT_RIPPLE_COLOR
       return this
     }

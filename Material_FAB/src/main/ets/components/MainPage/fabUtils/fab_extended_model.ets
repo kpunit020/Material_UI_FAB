@@ -17,20 +17,31 @@
 import { CommonProperties } from './fabCommonProperties'
 
 namespace FabExtendedModel {
+  const DEFAULT_FAB_LABEL : string | Resource = 'Add'
+  const DEFAULT_FONT_COLOR : ResourceColor = Color.White
+  const DEFAULT_FONT_STYLE : FontStyle = FontStyle.Normal
+  const DEFAULT_FONT_SIZE : number | string | Resource = '24vp'
+  const DEFAULT_FONT_WEIGHT : FontWeight = FontWeight.Bold
+  const DEFAULT_TEXT_PADDING : Padding = {left : '20vp', right : '20vp'}
+  const DEFAULT_FAB_MAX_WIDTH : number = 200
+  const DEFAULT_BORDER : BorderOptions = {radius : '16vp'}
+  const DEFAULT_ICON_SIZE : SizeOptions = {height : '24vp', width : '24vp'}
+  const DEFAULT_ICON_PADDING : Padding = {left : '20vp', right : '-8vp'}
+
   export class Model extends CommonProperties {
-    private fabLabel : string | Resource = 'Add'
-    private fontColor : ResourceColor = Color.White
-    private fontStyle : FontStyle = FontStyle.Normal
-    private fontSize : number | string | Resource = '24vp'
-    private fontWeight : FontWeight = FontWeight.Bold
-    private textPadding : Padding = {left : '20vp', right : '20vp'}
-    private fabMaxWidth : number = 200
+    private fabLabel : string | Resource = DEFAULT_FAB_LABEL
+    private fontColor : ResourceColor = DEFAULT_FONT_COLOR
+    private fontStyle : FontStyle = DEFAULT_FONT_STYLE
+    private fontSize : number | string | Resource = DEFAULT_FONT_SIZE
+    private fontWeight : FontWeight = DEFAULT_FONT_WEIGHT
+    private textPadding : Padding = DEFAULT_TEXT_PADDING
+    private fabMaxWidth : number = DEFAULT_FAB_MAX_WIDTH
 
     constructor(){
       super()
-      this.setBorder({radius : 16})
-      this.iconSize = {height : '24vp', width : '24vp'}
-      this.iconPadding = {left : 20, right : -8}
+      this.setBorder(DEFAULT_BORDER)
+      this.iconSize = DEFAULT_ICON_SIZE
+      this.iconPadding = DEFAULT_ICON_PADDING
     }
 
     getFabLabel() : string | Resource {
@@ -38,7 +49,7 @@ namespace FabExtendedModel {
     }
 
     setFabLabel(fabLabel : string | Resource) : Model {
-      this.fabLabel = (fabLabel != null && fabLabel != undefined) ? fabLabel : 'Add'
+      this.fabLabel = (fabLabel != null && fabLabel != undefined) ? fabLabel : DEFAULT_FAB_LABEL
       return this
     }
 
@@ -47,7 +58,7 @@ namespace FabExtendedModel {
     }
 
     setFontColor(fontColor : ResourceColor) : Model {
-      this.fontColor = (fontColor != null && fontColor != undefined) ? fontColor : Color.White
+      this.fontColor = (fontColor != null && fontColor != undefined) ? fontColor : DEFAULT_FONT_COLOR
       return this
     }
 
@@ -56,7 +67,7 @@ namespace FabExtendedModel {
     }
 
     setFontStyle(fontStyle : FontStyle) : Model {
-      this.fontStyle = (fontStyle != null && fontStyle != undefined)? fontStyle : FontStyle.Normal
+      this.fontStyle = (fontStyle != null && fontStyle != undefined)? fontStyle : DEFAULT_FONT_STYLE
       return this
     }
 
@@ -65,7 +76,7 @@ namespace FabExtendedModel {
     }
 
     setFontSize(fontSize : number | string | Resource) : Model {
-      this.fontSize = (fontSize != null && fontSize != undefined)? fontSize : '24vp'
+      this.fontSize = (fontSize != null && fontSize != undefined)? fontSize : DEFAULT_FONT_SIZE
       return this
     }
 
@@ -74,7 +85,7 @@ namespace FabExtendedModel {
     }
 
     setFontWeight(fontWeight : FontWeight) : Model {
-      this.fontWeight = (fontWeight != null && fontWeight != undefined)? fontWeight : FontWeight.Bold
+      this.fontWeight = (fontWeight != null && fontWeight != undefined)? fontWeight : DEFAULT_FONT_WEIGHT
       return this
     }
 
@@ -83,7 +94,7 @@ namespace FabExtendedModel {
     }
 
     setTextPadding(textPadding : Padding) : Model {
-      this.textPadding = (textPadding != null && textPadding != undefined)? textPadding : {left : '20vp', right : '20vp'}
+      this.textPadding = (textPadding != null && textPadding != undefined)? textPadding : DEFAULT_TEXT_PADDING
       return this
     }
 
@@ -92,7 +103,7 @@ namespace FabExtendedModel {
     }
 
     setFabMaxWidth(fabMaxWidth : number) : Model {
-      this.fabMaxWidth = (fabMaxWidth != null && fabMaxWidth != undefined)? fabMaxWidth : 200
+      this.fabMaxWidth = (fabMaxWidth != null && fabMaxWidth != undefined)? fabMaxWidth : DEFAULT_FAB_MAX_WIDTH
       return this
     }
 

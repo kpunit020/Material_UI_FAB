@@ -15,18 +15,26 @@
 
 import { RippleModel } from '../ripple/rippleModel'
 
+const DEFAULT_FAB_ICON : ResourceStr = undefined
+const DEFAULT_ICON_SIZE : SizeOptions = undefined
+const DEFAULT_ICON_PADDING : Padding = undefined
+const DEFAULT_FAB_SIZE : SizeOptions = undefined
+const DEFAULT_BACKGROUND_COLOR : ResourceColor = Color.Blue
+const DEFAULT_BORDER : BorderOptions = {}
+const DEFAULT_POSITION : Position = {x : 0, y : 0}
+
 class CommonProperties {
-  protected fabIcon: ResourceStr = undefined
-  protected iconSize: SizeOptions = undefined
-  protected iconPadding: Padding = undefined
+  protected fabIcon: ResourceStr = DEFAULT_FAB_ICON
+  protected iconSize: SizeOptions = DEFAULT_ICON_SIZE
+  protected iconPadding: Padding = DEFAULT_ICON_PADDING
   protected rippleModel: RippleModel.Model = new RippleModel.Model()
-  protected fabSize: SizeOptions = undefined
-  protected backgroundColor: Color = Color.Blue
-  protected border: BorderOptions = {}
-  protected position: Position = {x : 0, y : 0}
+  protected fabSize: SizeOptions = DEFAULT_FAB_SIZE
+  protected backgroundColor: ResourceColor = DEFAULT_BACKGROUND_COLOR
+  protected border: BorderOptions = DEFAULT_BORDER
+  protected position: Position = DEFAULT_POSITION
 
   setFabIcon(fabIcon: ResourceStr): CommonProperties{
-    this.fabIcon = (fabIcon != null && fabIcon != undefined)? fabIcon : undefined
+    this.fabIcon = (fabIcon != null && fabIcon != undefined)? fabIcon : DEFAULT_FAB_ICON
     return this
   }
 
@@ -35,7 +43,7 @@ class CommonProperties {
   }
 
   setIconSize(iconSize: SizeOptions): CommonProperties {
-    this.iconSize = (iconSize != null && iconSize != undefined)? iconSize : undefined
+    this.iconSize = (iconSize != null && iconSize != undefined)? iconSize : DEFAULT_ICON_SIZE
     return this
   }
 
@@ -44,7 +52,7 @@ class CommonProperties {
   }
 
   setIconPadding(iconPadding: Padding): CommonProperties {
-    this.iconPadding = (iconPadding != null && iconPadding != undefined)? iconPadding : undefined
+    this.iconPadding = (iconPadding != null && iconPadding != undefined)? iconPadding : DEFAULT_ICON_PADDING
     return this
   }
 
@@ -62,7 +70,7 @@ class CommonProperties {
   }
 
   setFabSize(fabSize: SizeOptions): CommonProperties {
-    this.fabSize = (fabSize != null && fabSize != undefined)? fabSize : undefined
+    this.fabSize = (fabSize != null && fabSize != undefined)? fabSize : DEFAULT_FAB_SIZE
     this.rippleModel.setRippleContainerSize(this.fabSize)
     return this
   }
@@ -72,16 +80,16 @@ class CommonProperties {
   }
 
   setBackgroundColor(backgroundColor: Color): CommonProperties {
-    this.backgroundColor = (backgroundColor != null && backgroundColor != undefined)? backgroundColor : Color.Blue
+    this.backgroundColor = (backgroundColor != null && backgroundColor != undefined)? backgroundColor : DEFAULT_BACKGROUND_COLOR
     return this
   }
 
-  getBackgroundColor(): Color {
+  getBackgroundColor(): ResourceColor {
     return this.backgroundColor
   }
 
   setBorder(border: BorderOptions): CommonProperties {
-    this.border = (border != null && border != undefined)? border : {}
+    this.border = (border != null && border != undefined)? border : DEFAULT_BORDER
     this.rippleModel.setBorder(this.border)
     return this
   }
@@ -91,12 +99,21 @@ class CommonProperties {
   }
 
   setPosition(position: Position): CommonProperties {
-    this.position = (position != null && position != undefined)? position : {x : 0, y : 0}
+    this.position = (position != null && position != undefined)? position : DEFAULT_POSITION
     return this
   }
 
   getPosition(): Position {
     return this.position
+  }
+
+  setRippleColor(rippleColor : Color) : CommonProperties {
+    this.rippleModel.setRippleColor(rippleColor)
+    return this
+  }
+
+  getRippleColor() : ResourceColor {
+    return this.rippleModel.getRippleColor()
   }
 }
 
