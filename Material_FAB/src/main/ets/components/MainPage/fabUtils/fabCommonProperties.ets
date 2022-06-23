@@ -79,7 +79,7 @@ class CommonProperties {
     return this.fabSize
   }
 
-  setBackgroundColor(backgroundColor: Color): CommonProperties {
+  setBackgroundColor(backgroundColor: ResourceColor): CommonProperties {
     this.backgroundColor = (backgroundColor != null && backgroundColor != undefined)? backgroundColor : DEFAULT_BACKGROUND_COLOR
     return this
   }
@@ -107,7 +107,7 @@ class CommonProperties {
     return this.position
   }
 
-  setRippleColor(rippleColor : Color) : CommonProperties {
+  setRippleColor(rippleColor : ResourceColor) : CommonProperties {
     this.rippleModel.setRippleColor(rippleColor)
     return this
   }
