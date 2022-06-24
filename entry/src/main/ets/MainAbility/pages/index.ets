@@ -14,34 +14,32 @@
  */
 
 
-
-import {FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel} from '@ohos/material-fab'
+import { FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel } from '@ohos/material-fab'
 
 @Entry
 @Component
 struct ListExample {
-  model_small : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.small)
-  model_medium : FabRegularModel.Model = new FabRegularModel.Model()
-  model_large : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.large)
-  model_extended : FabExtendedModel.Model = new FabExtendedModel.Model()
+  model_Small: FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.Small)
+  model_Medium: FabRegularModel.Model = new FabRegularModel.Model()
+  model_Large: FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.Large)
+  model_extended: FabExtendedModel.Model = new FabExtendedModel.Model()
 
   aboutToAppear() {
-    this.model_small.setPosition({x : 20, y : 30})
-    this.model_small.setBackgroundColor(Color.Green)
+    this.model_Small.setPosition({ x: 20, y: 30 })
+    this.model_Small.setBackgroundColor(Color.Green)
 
-    this.model_medium.setPosition({x : 290, y : 30})
-    this.model_medium.setBackgroundColor(Color.Red)
+    this.model_Medium.setPosition({ x: 290, y: 30 })
+    this.model_Medium.setBackgroundColor(Color.Red)
 
-    this.model_large.setPosition({x : 250, y : 630})
-    this.model_large.setBackgroundColor(Color.Orange)
+    this.model_Large.setPosition({ x: 250, y: 630 })
+    this.model_Large.setBackgroundColor(Color.Orange)
 
-    this.model_extended.setPosition({x : 20, y : 630}).setFabIcon($r('app.media.add_icon'))
-    this.model_small.setBackgroundColor(Color.Green)
+    this.model_extended.setPosition({ x: 20, y: 630 }).setFabIcon($r('app.media.add_icon'))
   }
 
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   @State editFlag: boolean = false
-  @State count : number = 1
+  @State count: number = 1
 
   build() {
     Column() {
@@ -50,15 +48,19 @@ struct ListExample {
           ForEach(this.arr, (item) => {
             ListItem() {
               Text('' + item)
-                .width('100%').height(100).fontSize(16)
-                .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
+                .width('100%')
+                .height(100)
+                .fontSize(16)
+                .textAlign(TextAlign.Center)
+                .borderRadius(10)
+                .backgroundColor(0xFFFFFF)
             }.editable(true)
           }, item => item)
         }
-        .listDirection(Axis.Vertical) //Arrangement direction
-        .divider({ strokeWidth: 2, color: 0xFFFFFF, startMargin: 20, endMargin: 20 }) // Divider line
-        .edgeEffect(EdgeEffect.None) // No effect when sliding to the edge
-        .chainAnimation(false) // Chained animations are disabled.
+        .listDirection(Axis.Vertical)
+        .divider({ strokeWidth: 2, color: 0xFFFFFF, startMargin: 20, endMargin: 20 })
+        .edgeEffect(EdgeEffect.None)
+        .chainAnimation(false)
         .onScrollIndex((firstIndex: number, lastIndex: number) => {
           console.info('first' + firstIndex)
           console.info('last' + lastIndex)
@@ -70,33 +72,34 @@ struct ListExample {
           console.info(JSON.stringify(this.arr))
           this.editFlag = false
           return true
-        }).width('90%')
+        })
+        .width('90%')
       }.width('100%')
 
       FAB_regular({
-        model : this.model_small,
-        onClick : (event) => {
-          AlertDialog.show({ message: 'You clicked small fab' })
+        model: this.model_Small,
+        onClick: (event) => {
+          AlertDialog.show({ message: 'You clicked Small fab' })
         }
       })
 
       FAB_regular({
-        model : this.model_medium,
-        onClick : (event) => {
-          AlertDialog.show({ message: 'You clicked medium fab' })
+        model: this.model_Medium,
+        onClick: (event) => {
+          AlertDialog.show({ message: 'You clicked Medium fab' })
         }
       })
 
       FAB_regular({
-        model : this.model_large,
-        onClick : (event) => {
-          AlertDialog.show({ message: 'You clicked large fab' })
+        model: this.model_Large,
+        onClick: (event) => {
+          AlertDialog.show({ message: 'You clicked Large fab' })
         }
       })
 
       FAB_extended({
-        model : this.model_extended,
-        onClick : (event) => {
+        model: this.model_extended,
+        onClick: (event) => {
           AlertDialog.show({ message: 'You clicked extended fab' })
         }
       })

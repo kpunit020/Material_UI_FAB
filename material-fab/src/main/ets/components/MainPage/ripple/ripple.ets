@@ -18,7 +18,7 @@ import { RippleModel } from './rippleModel'
 @Component
 export struct Ripple {
   @State model: RippleModel.Model = undefined
-  @Link private show_ripple : boolean
+  @Link private show_ripple: boolean
 
   private show_animation() {
     animateTo({

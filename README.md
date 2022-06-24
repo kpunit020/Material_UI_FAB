@@ -1,9 +1,9 @@
-
 # material-fab
 
 Material FAB replicates the floating action buttons(FAB) using *material design 3* specifications in openHarmony.
 
 ## Dependencies
+
 For using material-fab in your app, add the below dependency in entry/package.json
 
 ```
@@ -20,7 +20,6 @@ Import all components at once
 import {FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel} from '@ohos/material-fab'
 ```
 
-
 ## Screenshots
 
 ![](images/sample_small_fab.gif)   ![](images/sample_medium_fab.gif)
@@ -29,6 +28,7 @@ import {FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel} f
 ## Class **CommonProperties**
 
 ### Methods
+
 | Name | Return Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `setFabIcon(fabIcon: ResourceStr)` | `CommonProperties` | sets icon for the fab. |
@@ -50,28 +50,29 @@ import {FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel} f
 | `setRippleColor(rippleColor : ResourceColor)` | `CommonProperties` | sets custom ripple color. |
 | `getRippleColor()` | `ResourceColor` | return current ripple color. |
 
-
 ## Class **FabRegularModel.Model**
-Implementation of Regular FAB buttons with size options as *small*, *medium* and *large*.
+
+Implementation of Regular FAB buttons with size options as *Small*, *Medium* and *Large*.
 
 ### Methods
+
 | Name | Return Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `setFabType(fabType : FabType)` | `FabRegularModel.Model` | sets fab type. Defaults to *FabType.medium* |
+| `setFabType(fabType : FabType)` | `FabRegularModel.Model` | sets fab type. Defaults to *FabType.Medium* |
 | `getFabType()` | `FabType` | return current fab type. |
 
-
 ### FabType enum
+
 | Name | Description                |
 | :-------- | :------------------------- |
-| `small` | small fab as per material design 3 specifications. |
-| `medium` | medium fab as per material design 3 specifications. |
-| `large` | large fab as per material design 3 specifications. |
-
+| `Small` | Small fab as per material design 3 specifications. |
+| `Medium` | Medium fab as per material design 3 specifications. |
+| `Large` | Large fab as per material design 3 specifications. |
 
 ### Usage/Examples
 
 #### Small FAB
+
 ![small_fab.png](images/small_fab.png)
 
 ```
@@ -79,8 +80,8 @@ import {FAB_regular, FabRegularModel, FabType} from '@ohos/material-fab'
 
 @Entry
 @Component
-struct small_fab_demo {
-  model : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.small)
+struct Small_fab_demo {
+  model : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.Small)
 
   aboutToAppear(){
     this.model.setPosition({x : 100, y : 300})
@@ -91,7 +92,7 @@ struct small_fab_demo {
       FAB_regular({
         model : this.model,
         onClick : (event) => {
-          AlertDialog.show({ message: 'You clicked small fab' })
+          AlertDialog.show({ message: 'You clicked Small fab' })
         }
       })
     }.height('100%')
@@ -100,6 +101,7 @@ struct small_fab_demo {
 ```
 
 #### Medium FAB
+
 ![medium_fab.png](images/medium.png)
 
 ```
@@ -107,8 +109,8 @@ import {FAB_regular, FabRegularModel, FabType} from '@ohos/material-fab'
 
 @Entry
 @Component
-struct medium_fab_demo {
-  model : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.medium)
+struct Medium_fab_demo {
+  model : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.Medium)
 
   aboutToAppear(){
     this.model.setPosition({x : 100, y : 300})
@@ -120,7 +122,7 @@ struct medium_fab_demo {
       FAB_regular({
         model : this.model,
         onClick : (event) => {
-          AlertDialog.show({ message: 'You clicked medium fab' })
+          AlertDialog.show({ message: 'You clicked Medium fab' })
         }
       })
     }.height('100%')
@@ -129,6 +131,7 @@ struct medium_fab_demo {
 ```
 
 #### Large FAB
+
 ![large_fab.png](images/large_fab.png)
 
 ```
@@ -136,8 +139,8 @@ import {FAB_regular, FabRegularModel, FabType} from '@ohos/material-fab'
 
 @Entry
 @Component
-struct large_fab_demo {
-  model : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.large)
+struct Large_fab_demo {
+  model : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.Large)
 
   aboutToAppear(){
     this.model.setPosition({x : 100, y : 300})
@@ -149,7 +152,7 @@ struct large_fab_demo {
       FAB_regular({
         model : this.model,
         onClick : (event) => {
-          AlertDialog.show({ message: 'You clicked large fab' })
+          AlertDialog.show({ message: 'You clicked Large fab' })
         }
       })
     }.height('100%')
@@ -158,9 +161,11 @@ struct large_fab_demo {
 ```
 
 ## Class **FabExtendedModel.Model**
+
 Implementation of Extended FAB buttons with an options for addition of leading icon.
 
 ### Methods
+
 | Name | Return Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `setFabLabel(fabLabel : string` or `Resource)` | `FabExtendedModel.Model` | sets label text. |
@@ -178,12 +183,12 @@ Implementation of Extended FAB buttons with an options for addition of leading i
 | `setFabMaxWidth(fabMaxWidth : number)` | `FabExtendedModel.Model` | sets maximum allowed width for fab. |
 | `getFabMaxWidth()` | `number` | return maximum allowed width for the fab. |
 
-
-
 ### Usage/Examples
 
 #### With Leading Icon
+
 ![with_icon.png](images/extended_with_icon.png)
+
 ```
 import {FAB_extended, FabExtendedModel} from '@ohos/material-fab'
 
@@ -209,8 +214,11 @@ struct extended_fab_demo {
   }
 }
 ```
+
 #### Without Leading Icon
+
 ![without_icon.png](images/extended_without_icon.png)
+
 ```
 import {FAB_extended, FabExtendedModel} from '@ohos/material-fab'
 
@@ -237,12 +245,17 @@ struct extended_fab_demo {
 }
 ```
 
-
 ## Compatibility
+
 Supports OpenHarmony API version 8
 
 ## Code Contribution
-If you find any problems during usage, you can submit an [Issue](https://github.com/Applib-OpenHarmony/Material_UI_FAB/issues) to us. Of course, we also welcome you to send us [PR](https://github.com/Applib-OpenHarmony/Material_UI_FAB/pulls).
+
+If you find any problems during usage, you can submit
+an [Issue](https://github.com/Applib-OpenHarmony/Material_UI_FAB/issues) to us. Of course, we also welcome you to send
+us [PR](https://github.com/Applib-OpenHarmony/Material_UI_FAB/pulls).
 
 ## Open source License
-This project is based on [Apache License 2.0](https://github.com/kpunit020/Material_UI_FAB/blob/main/LICENSE), please enjoy and participate in open source freely.
+
+This project is based on [Apache License 2.0](https://github.com/kpunit020/Material_UI_FAB/blob/main/LICENSE), please
+enjoy and participate in open source freely.

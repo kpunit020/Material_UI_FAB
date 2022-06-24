@@ -14,7 +14,7 @@
  */
 
 export enum FabType {
-  small,
-  medium,
-  large
+  Small,
+  Medium,
+  Large
 }

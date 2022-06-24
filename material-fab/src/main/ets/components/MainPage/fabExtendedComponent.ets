@@ -13,14 +13,14 @@
  * limitations under the License.
  */
 
-import {Ripple} from './ripple/ripple'
+import { Ripple } from './ripple/ripple'
 import { FabExtendedModel } from './fabUtils/fab_extended_model'
 
 @Component
 export struct FAB_extended {
-  @State model : FabExtendedModel.Model = undefined
-  @State show_ripple : boolean = false
-  onClick : (event? : ClickEvent) => void
+  @State model: FabExtendedModel.Model = undefined
+  @State show_ripple: boolean = false
+  onClick: (event?: ClickEvent) => void
 
   build() {
     Row() {
@@ -43,8 +43,8 @@ export struct FAB_extended {
         .align(Alignment.Start)
 
       Ripple({
-        model : this.model.getRippleModel(),
-        show_ripple : $show_ripple
+        model: this.model.getRippleModel(),
+        show_ripple: $show_ripple
       })
 
     }
@@ -62,7 +62,7 @@ export struct FAB_extended {
       this.model.getRippleModel().setRippleStartPosition({ x: event.x, y: event.y })
       this.show_ripple = true
 
-      if(this.onClick){
+      if (this.onClick) {
         setTimeout(() => {
           this.onClick(event)
         }, this.model.getRippleModel().getRippleDuration())

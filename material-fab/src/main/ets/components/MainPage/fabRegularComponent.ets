@@ -14,26 +14,25 @@
  */
 
 
-import {Ripple} from './ripple/ripple'
+import { Ripple } from './ripple/ripple'
 import { FabRegularModel } from './fabUtils/fab_regular_model'
 
 @Component
 export struct FAB_regular {
-  @State model : FabRegularModel.Model = undefined
-  @State show_ripple : boolean = false
+  @State model: FabRegularModel.Model = undefined
+  @State show_ripple: boolean = false
   onClick: (event?: ClickEvent) => void
 
-
   build() {
-    if(this.model != undefined) {
+    if (this.model != undefined) {
       Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
         Image(this.model.getFabIcon())
           .size(this.model.getIconSize())
           .objectFit(ImageFit.Cover)
 
         Ripple({
-          model : this.model.getRippleModel(),
-          show_ripple : $show_ripple
+          model: this.model.getRippleModel(),
+          show_ripple: $show_ripple
         })
       }
       .size(this.model.getFabSize())
@@ -49,7 +48,7 @@ export struct FAB_regular {
         })
         this.show_ripple = true
 
-        if(this.onClick){
+        if (this.onClick) {
           setTimeout(() => {
             this.onClick(event)
           }, this.model.getRippleModel().getRippleDuration())
@@ -59,5 +58,6 @@ export struct FAB_regular {
   }
 }
 
-export {FabType} from './fabUtils/fabTypes'
+export { FabType } from './fabUtils/fabTypes'
+
 export { FabRegularModel } from './fabUtils/fab_regular_model'

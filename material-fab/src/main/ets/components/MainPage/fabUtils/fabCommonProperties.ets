@@ -15,13 +15,13 @@
 
 import { RippleModel } from '../ripple/rippleModel'
 
-const DEFAULT_FAB_ICON : ResourceStr = undefined
-const DEFAULT_ICON_SIZE : SizeOptions = undefined
-const DEFAULT_ICON_PADDING : Padding = undefined
-const DEFAULT_FAB_SIZE : SizeOptions = undefined
-const DEFAULT_BACKGROUND_COLOR : ResourceColor = Color.Blue
-const DEFAULT_BORDER : BorderOptions = {}
-const DEFAULT_POSITION : Position = {x : 0, y : 0}
+const DEFAULT_FAB_ICON: ResourceStr = undefined
+const DEFAULT_ICON_SIZE: SizeOptions = undefined
+const DEFAULT_ICON_PADDING: Padding = undefined
+const DEFAULT_FAB_SIZE: SizeOptions = undefined
+const DEFAULT_BACKGROUND_COLOR: ResourceColor = Color.Blue
+const DEFAULT_BORDER: BorderOptions = {}
+const DEFAULT_POSITION: Position = { x: 0, y: 0 }
 
 class CommonProperties {
   protected fabIcon: ResourceStr = DEFAULT_FAB_ICON
@@ -34,7 +34,7 @@ class CommonProperties {
   protected position: Position = DEFAULT_POSITION
 
   setFabIcon(fabIcon: ResourceStr): CommonProperties{
-    this.fabIcon = (fabIcon != null && fabIcon != undefined)? fabIcon : DEFAULT_FAB_ICON
+    this.fabIcon = (fabIcon != null && fabIcon != undefined) ? fabIcon : DEFAULT_FAB_ICON
     return this
   }
 
@@ -43,7 +43,7 @@ class CommonProperties {
   }
 
   setIconSize(iconSize: SizeOptions): CommonProperties {
-    this.iconSize = (iconSize != null && iconSize != undefined)? iconSize : DEFAULT_ICON_SIZE
+    this.iconSize = (iconSize != null && iconSize != undefined) ? iconSize : DEFAULT_ICON_SIZE
     return this
   }
 
@@ -52,7 +52,7 @@ class CommonProperties {
   }
 
   setIconPadding(iconPadding: Padding): CommonProperties {
-    this.iconPadding = (iconPadding != null && iconPadding != undefined)? iconPadding : DEFAULT_ICON_PADDING
+    this.iconPadding = (iconPadding != null && iconPadding != undefined) ? iconPadding : DEFAULT_ICON_PADDING
     return this
   }
 
@@ -61,7 +61,7 @@ class CommonProperties {
   }
 
   setRippleModel(rippleModel: RippleModel.Model): CommonProperties {
-    this.rippleModel = (rippleModel != null && rippleModel != undefined)? rippleModel : new RippleModel.Model()
+    this.rippleModel = (rippleModel != null && rippleModel != undefined) ? rippleModel : new RippleModel.Model()
     return this
   }
 
@@ -70,7 +70,7 @@ class CommonProperties {
   }
 
   setFabSize(fabSize: SizeOptions): CommonProperties {
-    this.fabSize = (fabSize != null && fabSize != undefined)? fabSize : DEFAULT_FAB_SIZE
+    this.fabSize = (fabSize != null && fabSize != undefined) ? fabSize : DEFAULT_FAB_SIZE
     this.rippleModel.setRippleContainerSize(this.fabSize)
     return this
   }
@@ -80,7 +80,7 @@ class CommonProperties {
   }
 
   setBackgroundColor(backgroundColor: ResourceColor): CommonProperties {
-    this.backgroundColor = (backgroundColor != null && backgroundColor != undefined)? backgroundColor : DEFAULT_BACKGROUND_COLOR
+    this.backgroundColor = (backgroundColor != null && backgroundColor != undefined) ? backgroundColor : DEFAULT_BACKGROUND_COLOR
     return this
   }
 
@@ -89,7 +89,7 @@ class CommonProperties {
   }
 
   setBorder(border: BorderOptions): CommonProperties {
-    this.border = (border != null && border != undefined)? border : DEFAULT_BORDER
+    this.border = (border != null && border != undefined) ? border : DEFAULT_BORDER
     this.rippleModel.setBorder(this.border)
     return this
   }
@@ -99,7 +99,7 @@ class CommonProperties {
   }
 
   setPosition(position: Position): CommonProperties {
-    this.position = (position != null && position != undefined)? position : DEFAULT_POSITION
+    this.position = (position != null && position != undefined) ? position : DEFAULT_POSITION
     return this
   }
 
@@ -107,12 +107,12 @@ class CommonProperties {
     return this.position
   }
 
-  setRippleColor(rippleColor : ResourceColor) : CommonProperties {
+  setRippleColor(rippleColor: ResourceColor): CommonProperties {
     this.rippleModel.setRippleColor(rippleColor)
     return this
   }
 
-  getRippleColor() : ResourceColor {
+  getRippleColor(): ResourceColor {
     return this.rippleModel.getRippleColor()
   }
 }

@@ -18,37 +18,37 @@ import { FabType } from './fabTypes'
 import { sizeSpecs } from './fab_regular_specs'
 
 namespace FabRegularModel {
-  const DEFAULT_FAB_TYPE : FabType = FabType.medium
-  const DEFAULT_FAB_ICON : ResourceStr = $r('app.media.add_icon')
+  const DEFAULT_FAB_TYPE: FabType = FabType.Medium
+  const DEFAULT_FAB_ICON: ResourceStr = $r('app.media.add_icon')
 
   export class Model extends CommonProperties {
-    private fabType : FabType = DEFAULT_FAB_TYPE
+    private fabType: FabType = DEFAULT_FAB_TYPE
 
-    constructor(){
+    constructor() {
       super()
       this.fabType = DEFAULT_FAB_TYPE
       this.fabIcon = DEFAULT_FAB_ICON
       this.setFabSpecs(this.fabType)
     }
 
-    private setFabSpecs(fabType : FabType):void {
+    private setFabSpecs(fabType: FabType): void {
       this.setFabSize(sizeSpecs[fabType].containerSize)
       this.setIconSize(sizeSpecs[fabType].iconSize)
       this.setBorder(sizeSpecs[fabType].border)
     }
 
-    setFabType(fabType : FabType) : Model {
-      if(fabType != FabType.small && fabType != FabType.medium && fabType != FabType.large){
+    setFabType(fabType: FabType): Model {
+      if (fabType != FabType.Small && fabType != FabType.Medium && fabType != FabType.Large) {
         this.fabType = DEFAULT_FAB_TYPE
       }
-      else{
+      else {
         this.fabType = fabType
       }
       this.setFabSpecs(fabType)
       return this
     }
 
-    getFabType() : FabType {
+    getFabType(): FabType {
       return this.fabType
     }
   }

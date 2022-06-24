@@ -13,5 +13,6 @@
  * limitations under the License.
  */
 
-export { FAB_regular, FabType, FabRegularModel} from './src/main/ets/components/MainPage/fabRegularComponent'
-export { FAB_extended, FabExtendedModel} from './src/main/ets/components/MainPage/fabExtendedComponent'
+export { FAB_regular, FabType, FabRegularModel } from './src/main/ets/components/MainPage/fabRegularComponent'
+
+export { FAB_extended, FabExtendedModel } from './src/main/ets/components/MainPage/fabExtendedComponent'

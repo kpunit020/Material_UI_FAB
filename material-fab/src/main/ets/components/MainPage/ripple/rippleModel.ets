@@ -14,16 +14,16 @@
  */
 
 namespace RippleModel {
-  const DEFAULT_RIPPLE_DURATION : number = 300
-  const DEFAULT_IS_BOUNDED : boolean = true
-  const DEFAULT_RIPPLE_COLOR : ResourceColor = Color.White
-  const DEFAULT_CIRCLE_SIZE : number = 10
-  const DEFAULT_OPACITY : number = 0.4
-  const DEFAULT_RIPPLE_SCALE : number = 0
-  const DEFAULT_RIPPLE_START_POSITION : Position = { x: 0, y: 0 }
-  const DEFAULT_RIPPLE_CONTAINER_SIZE : SizeOptions = { height: '56vp', width: '96vp' }
-  const DEFAULT_BORDER : BorderOptions = {}
-  const DEFAULT_Z_INDEX : number = 2
+  const DEFAULT_RIPPLE_DURATION: number = 300
+  const DEFAULT_IS_BOUNDED: boolean = true
+  const DEFAULT_RIPPLE_COLOR: ResourceColor = Color.White
+  const DEFAULT_CIRCLE_SIZE: number = 10
+  const DEFAULT_OPACITY: number = 0.4
+  const DEFAULT_RIPPLE_SCALE: number = 0
+  const DEFAULT_RIPPLE_START_POSITION: Position = { x: 0, y: 0 }
+  const DEFAULT_RIPPLE_CONTAINER_SIZE: SizeOptions = { height: '56vp', width: '96vp' }
+  const DEFAULT_BORDER: BorderOptions = {}
+  const DEFAULT_Z_INDEX: number = 2
 
   export class Model {
     private rippleDuration: number = DEFAULT_RIPPLE_DURATION
@@ -41,11 +41,11 @@ namespace RippleModel {
       return this.rippleDuration
     }
 
-    setRippleDuration(rippleDuration : number) : Model {
+    setRippleDuration(rippleDuration: number): Model {
       if (rippleDuration < 0) {
         throw new Error("Invalid ripple duration. Please pass valid input");
       }
-      this.rippleDuration = (rippleDuration != null && rippleDuration != undefined) ? rippleDuration :  DEFAULT_RIPPLE_DURATION
+      this.rippleDuration = (rippleDuration != null && rippleDuration != undefined) ? rippleDuration : DEFAULT_RIPPLE_DURATION
       return this
     }
 
@@ -53,8 +53,8 @@ namespace RippleModel {
       return this.isBounded
     }
 
-    setIsBounded(isBounded : boolean) : Model {
-      this.isBounded = (isBounded != null && isBounded != undefined)? isBounded : DEFAULT_IS_BOUNDED
+    setIsBounded(isBounded: boolean): Model {
+      this.isBounded = (isBounded != null && isBounded != undefined) ? isBounded : DEFAULT_IS_BOUNDED
       return this
     }
 
@@ -62,17 +62,17 @@ namespace RippleModel {
       return this.rippleColor
     }
 
-    setRippleColor(rippleColor : ResourceColor) : Model {
-      this.rippleColor = (rippleColor != null && rippleColor != undefined)? rippleColor : DEFAULT_RIPPLE_COLOR
+    setRippleColor(rippleColor: ResourceColor): Model {
+      this.rippleColor = (rippleColor != null && rippleColor != undefined) ? rippleColor : DEFAULT_RIPPLE_COLOR
       return this
     }
 
-    getCircleSize(): number{
+    getCircleSize(): number {
       return this.circleSize
     }
 
-    setCircleSize(circleSize : number) : Model {
-      this.circleSize = (circleSize != null && circleSize != undefined)? circleSize : DEFAULT_CIRCLE_SIZE
+    setCircleSize(circleSize: number): Model {
+      this.circleSize = (circleSize != null && circleSize != undefined) ? circleSize : DEFAULT_CIRCLE_SIZE
       return this
     }
 
@@ -80,8 +80,8 @@ namespace RippleModel {
       return this.opacity
     }
 
-    setOpacity(opacity : number) : Model {
-      this.opacity = (opacity != null && opacity != undefined)? opacity : DEFAULT_OPACITY
+    setOpacity(opacity: number): Model {
+      this.opacity = (opacity != null && opacity != undefined) ? opacity : DEFAULT_OPACITY
       return this
     }
 
@@ -90,17 +90,16 @@ namespace RippleModel {
     }
 
     setRippleScale(rippleScale: number): Model {
-      this.rippleScale = (rippleScale != null && rippleScale != undefined)? rippleScale : DEFAULT_RIPPLE_SCALE
+      this.rippleScale = (rippleScale != null && rippleScale != undefined) ? rippleScale : DEFAULT_RIPPLE_SCALE
       return this
     }
 
-
-    getRippleStartPosition() : Position {
+    getRippleStartPosition(): Position {
       return this.rippleStartPosition
     }
 
     setRippleStartPosition(rippleStartPosition: Position): Model{
-      this.rippleStartPosition = (rippleStartPosition != null && rippleStartPosition != undefined)? rippleStartPosition : DEFAULT_RIPPLE_START_POSITION
+      this.rippleStartPosition = (rippleStartPosition != null && rippleStartPosition != undefined) ? rippleStartPosition : DEFAULT_RIPPLE_START_POSITION
       return this
     }
 
@@ -109,7 +108,7 @@ namespace RippleModel {
     }
 
     setRippleContainerSize(rippleContainerSize: SizeOptions): Model {
-      this.rippleContainerSize = (rippleContainerSize != null && rippleContainerSize != undefined)? rippleContainerSize : DEFAULT_RIPPLE_CONTAINER_SIZE
+      this.rippleContainerSize = (rippleContainerSize != null && rippleContainerSize != undefined) ? rippleContainerSize : DEFAULT_RIPPLE_CONTAINER_SIZE
       return this
     }
 
@@ -118,7 +117,7 @@ namespace RippleModel {
     }
 
     setBorder(border: BorderOptions): Model {
-      this.border = (border != null && border != undefined)? border : DEFAULT_BORDER
+      this.border = (border != null && border != undefined) ? border : DEFAULT_BORDER
       return this
     }
 
@@ -126,8 +125,8 @@ namespace RippleModel {
       return this.zIndex
     }
 
-    setZIndex(zIndex : number) : Model {
-      this.zIndex = (zIndex != null && zIndex != undefined)? zIndex : DEFAULT_Z_INDEX
+    setZIndex(zIndex: number): Model {
+      this.zIndex = (zIndex != null && zIndex != undefined) ? zIndex : DEFAULT_Z_INDEX
       return this
     }
 
@@ -139,7 +138,7 @@ namespace RippleModel {
       return Model.len2num(this.rippleStartPosition.y) - this.circleSize / 2
     }
 
-    reset() : Model {
+    reset(): Model {
       this.rippleDuration = DEFAULT_RIPPLE_DURATION
       this.isBounded = DEFAULT_IS_BOUNDED
       this.rippleColor = DEFAULT_RIPPLE_COLOR
@@ -157,10 +156,9 @@ namespace RippleModel {
     /**
     * converts the Length type into number type and returns the value
     */
-    static len2num(value : Length) : number {
+    static len2num(value: Length): number {
       return parseFloat(value.toString())
     }
-
   }
 }
 
