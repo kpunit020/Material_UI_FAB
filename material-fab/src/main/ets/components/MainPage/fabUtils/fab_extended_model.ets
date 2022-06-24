@@ -23,7 +23,7 @@ namespace FabExtendedModel {
   const DEFAULT_FONT_SIZE: number | string | Resource = '24vp'
   const DEFAULT_FONT_WEIGHT: FontWeight = FontWeight.Bold
   const DEFAULT_TEXT_PADDING: Padding = { left: '20vp', right: '20vp' }
-  const DEFAULT_FAB_MAX_WIDTH: number = 200
+  const DEFAULT_FAB_MAX_WIDTH: Length = '200vp'
   const DEFAULT_BORDER: BorderOptions = { radius: '16vp' }
   const DEFAULT_ICON_SIZE: SizeOptions = { height: '24vp', width: '24vp' }
   const DEFAULT_ICON_PADDING: Padding = { left: '20vp', right: '-8vp' }
@@ -35,7 +35,7 @@ namespace FabExtendedModel {
     private fontSize: number | string | Resource = DEFAULT_FONT_SIZE
     private fontWeight: FontWeight = DEFAULT_FONT_WEIGHT
     private textPadding: Padding = DEFAULT_TEXT_PADDING
-    private fabMaxWidth: number = DEFAULT_FAB_MAX_WIDTH
+    private fabMaxWidth: Length = DEFAULT_FAB_MAX_WIDTH
 
     constructor() {
       super()
@@ -98,11 +98,11 @@ namespace FabExtendedModel {
       return this
     }
 
-    getFabMaxWidth(): number {
+    getFabMaxWidth(): Length {
       return this.fabMaxWidth
     }
 
-    setFabMaxWidth(fabMaxWidth: number): Model {
+    setFabMaxWidth(fabMaxWidth: Length): Model {
       this.fabMaxWidth = (fabMaxWidth != null && fabMaxWidth != undefined) ? fabMaxWidth : DEFAULT_FAB_MAX_WIDTH
       return this
     }

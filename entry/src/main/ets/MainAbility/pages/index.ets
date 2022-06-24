@@ -25,16 +25,16 @@ struct ListExample {
   model_extended: FabExtendedModel.Model = new FabExtendedModel.Model()
 
   aboutToAppear() {
-    this.model_Small.setPosition({ x: 20, y: 30 })
+    this.model_Small.setPosition({ x: '20vp', y: '30vp' })
     this.model_Small.setBackgroundColor(Color.Green)
 
-    this.model_Medium.setPosition({ x: 290, y: 30 })
+    this.model_Medium.setPosition({ x: '290vp', y: '30vp' })
     this.model_Medium.setBackgroundColor(Color.Red)
 
-    this.model_Large.setPosition({ x: 250, y: 630 })
+    this.model_Large.setPosition({ x: '250vp', y: '630vp' })
     this.model_Large.setBackgroundColor(Color.Orange)
 
-    this.model_extended.setPosition({ x: 20, y: 630 }).setFabIcon($r('app.media.add_icon'))
+    this.model_extended.setPosition({ x: '20vp', y: '630vp' }).setFabIcon($r('app.media.add_icon'))
   }
 
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]

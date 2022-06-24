@@ -20,7 +20,7 @@ namespace RippleModel {
   const DEFAULT_CIRCLE_SIZE: number = 10
   const DEFAULT_OPACITY: number = 0.4
   const DEFAULT_RIPPLE_SCALE: number = 0
-  const DEFAULT_RIPPLE_START_POSITION: Position = { x: 0, y: 0 }
+  const DEFAULT_RIPPLE_START_POSITION: Position = { x: '0vp', y: '0vp' }
   const DEFAULT_RIPPLE_CONTAINER_SIZE: SizeOptions = { height: '56vp', width: '96vp' }
   const DEFAULT_BORDER: BorderOptions = {}
   const DEFAULT_Z_INDEX: number = 2
@@ -72,6 +72,9 @@ namespace RippleModel {
     }
 
     setCircleSize(circleSize: number): Model {
+      if (circleSize < 0) {
+        throw new Error("Invalid circle size. Please pass valid input")
+      }
       this.circleSize = (circleSize != null && circleSize != undefined) ? circleSize : DEFAULT_CIRCLE_SIZE
       return this
     }
@@ -81,6 +84,9 @@ namespace RippleModel {
     }
 
     setOpacity(opacity: number): Model {
+      if (opacity < 0) {
+        throw new Error("Invalid opacity. Please pass valid input")
+      }
       this.opacity = (opacity != null && opacity != undefined) ? opacity : DEFAULT_OPACITY
       return this
     }
@@ -90,6 +96,9 @@ namespace RippleModel {
     }
 
     setRippleScale(rippleScale: number): Model {
+      if (rippleScale < 0) {
+        throw new Error("Invalid ripple Scale. Please pass valid input")
+      }
       this.rippleScale = (rippleScale != null && rippleScale != undefined) ? rippleScale : DEFAULT_RIPPLE_SCALE
       return this
     }
@@ -126,6 +135,9 @@ namespace RippleModel {
     }
 
     setZIndex(zIndex: number): Model {
+      if (zIndex < 0) {
+        throw new Error("Invalid z-Index. Please pass valid input")
+      }
       this.zIndex = (zIndex != null && zIndex != undefined) ? zIndex : DEFAULT_Z_INDEX
       return this
     }
