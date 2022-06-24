@@ -24,8 +24,8 @@
       ]
     },
     {
-      "name": "Material_FAB",
-      "srcPath": "./Material_FAB"
+      "name": "material-fab",
+      "srcPath": "./material-fab"
     }
   ]
 }

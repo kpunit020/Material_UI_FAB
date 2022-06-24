@@ -1,5 +1,5 @@
 {
-  "name": "@ohos/material_fab",
+  "name": "@ohos/material-fab",
   "description": "a npm package which contains arkUI2.0 page",
   "ohos": {
     "org": ""

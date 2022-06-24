@@ -10,6 +10,6 @@
   "repository": {},
   "license": "ISC",
   "dependencies": {
-    "@ohos/Material_FAB": "file:../Material_FAB"
+    "@ohos/material-fab": "file:../material-fab"
   }
 }

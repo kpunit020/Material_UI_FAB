@@ -42,6 +42,9 @@ namespace RippleModel {
     }
 
     setRippleDuration(rippleDuration : number) : Model {
+      if (rippleDuration < 0) {
+        throw new Error("Invalid ripple duration. Please pass valid input");
+      }
       this.rippleDuration = (rippleDuration != null && rippleDuration != undefined) ? rippleDuration :  DEFAULT_RIPPLE_DURATION
       return this
     }

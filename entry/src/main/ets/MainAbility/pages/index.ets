@@ -15,7 +15,7 @@
 
 
 
-import {FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel} from '@ohos/Material_FAB'
+import {FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel} from '@ohos/material-fab'
 
 @Entry
 @Component

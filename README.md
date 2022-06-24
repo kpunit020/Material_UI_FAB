@@ -1,14 +1,14 @@
 
-# Material_FAB
+# material-fab
 
 Material FAB replicates the floating action buttons(FAB) using *material design 3* specifications in openHarmony.
 
 ## Dependencies
-For using Material_FAB in your app, add the below dependency in entry/package.json
+For using material-fab in your app, add the below dependency in entry/package.json
 
 ```
 "dependencies": {
-    "@ohos/Material_FAB": "file:../Material_FAB"
+    "@ohos/material-fab": "file:../material-fab"
   }
 ```
 
@@ -17,7 +17,7 @@ For using Material_FAB in your app, add the below dependency in entry/package.js
 Import all components at once
 
 ```ets
-import {FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel} from '@ohos/Material_FAB'
+import {FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel} from '@ohos/material-fab'
 ```
 
 
@@ -75,7 +75,7 @@ Implementation of Regular FAB buttons with size options as *small*, *medium* and
 ![small_fab.png](images/small_fab.png)
 
 ```
-import {FAB_regular, FabRegularModel, FabType} from '@ohos/Material_FAB'
+import {FAB_regular, FabRegularModel, FabType} from '@ohos/material-fab'
 
 @Entry
 @Component
@@ -103,7 +103,7 @@ struct small_fab_demo {
 ![medium_fab.png](images/medium.png)
 
 ```
-import {FAB_regular, FabRegularModel, FabType} from '@ohos/Material_FAB'
+import {FAB_regular, FabRegularModel, FabType} from '@ohos/material-fab'
 
 @Entry
 @Component
@@ -132,7 +132,7 @@ struct medium_fab_demo {
 ![large_fab.png](images/large_fab.png)
 
 ```
-import {FAB_regular, FabRegularModel, FabType} from '@ohos/Material_FAB'
+import {FAB_regular, FabRegularModel, FabType} from '@ohos/material-fab'
 
 @Entry
 @Component
@@ -185,7 +185,7 @@ Implementation of Extended FAB buttons with an options for addition of leading i
 #### With Leading Icon
 ![with_icon.png](images/extended_with_icon.png)
 ```
-import {FAB_extended, FabExtendedModel} from '@ohos/Material_FAB'
+import {FAB_extended, FabExtendedModel} from '@ohos/material-fab'
 
 @Entry
 @Component
@@ -212,7 +212,7 @@ struct extended_fab_demo {
 #### Without Leading Icon
 ![without_icon.png](images/extended_without_icon.png)
 ```
-import {FAB_extended, FabExtendedModel} from '@ohos/Material_FAB'
+import {FAB_extended, FabExtendedModel} from '@ohos/material-fab'
 
 @Entry
 @Component

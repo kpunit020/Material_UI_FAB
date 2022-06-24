@@ -9,14 +9,14 @@
   },
   "deviceConfig": {},
   "module": {
-    "package": "com.example.Material_FAB",
+    "package": "com.example.material-fab",
     "deviceType": [
       "phone",
       "tablet"
     ],
     "distro": {
       "deliveryWithInstall": true,
-      "moduleName": "Material_FAB",
+      "moduleName": "material-fab",
       "moduleType": "har"
     },
     "uiSyntax": "ets"
