@@ -19,20 +19,20 @@ import { FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel }
 @Entry
 @Component
 struct ListExample {
-  model_Small: FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.Small)
-  model_Medium: FabRegularModel.Model = new FabRegularModel.Model()
-  model_Large: FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.Large)
+  model_SMALL: FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.SMALL)
+  model_MEDIUM: FabRegularModel.Model = new FabRegularModel.Model()
+  model_LARGE: FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.LARGE)
   model_extended: FabExtendedModel.Model = new FabExtendedModel.Model()
 
   aboutToAppear() {
-    this.model_Small.setPosition({ x: '20vp', y: '30vp' })
-    this.model_Small.setBackgroundColor(Color.Green)
+    this.model_SMALL.setPosition({ x: '20vp', y: '30vp' })
+    this.model_SMALL.setBackgroundColor(Color.Green)
 
-    this.model_Medium.setPosition({ x: '290vp', y: '30vp' })
-    this.model_Medium.setBackgroundColor(Color.Red)
+    this.model_MEDIUM.setPosition({ x: '290vp', y: '30vp' })
+    this.model_MEDIUM.setBackgroundColor(Color.Red)
 
-    this.model_Large.setPosition({ x: '250vp', y: '630vp' })
-    this.model_Large.setBackgroundColor(Color.Orange)
+    this.model_LARGE.setPosition({ x: '250vp', y: '630vp' })
+    this.model_LARGE.setBackgroundColor(Color.Orange)
 
     this.model_extended.setPosition({ x: '20vp', y: '630vp' }).setFabIcon($r('app.media.add_icon'))
   }
@@ -77,23 +77,23 @@ struct ListExample {
       }.width('100%')
 
       FAB_regular({
-        model: this.model_Small,
+        model: this.model_SMALL,
         onClick: (event) => {
-          AlertDialog.show({ message: 'You clicked Small fab' })
+          AlertDialog.show({ message: 'You clicked SMALL fab' })
         }
       })
 
       FAB_regular({
-        model: this.model_Medium,
+        model: this.model_MEDIUM,
         onClick: (event) => {
-          AlertDialog.show({ message: 'You clicked Medium fab' })
+          AlertDialog.show({ message: 'You clicked MEDIUM fab' })
         }
       })
 
       FAB_regular({
-        model: this.model_Large,
+        model: this.model_LARGE,
         onClick: (event) => {
-          AlertDialog.show({ message: 'You clicked Large fab' })
+          AlertDialog.show({ message: 'You clicked LARGE fab' })
         }
       })
 

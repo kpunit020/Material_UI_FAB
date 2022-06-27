@@ -52,26 +52,26 @@ import {FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel} f
 
 ## Class **FabRegularModel.Model**
 
-Implementation of Regular FAB buttons with size options as *Small*, *Medium* and *Large*.
+Implementation of Regular FAB buttons with size options as *SMALL*, *MEDIUM* and *LARGE*.
 
 ### Methods
 
 | Name | Return Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `setFabType(fabType : FabType)` | `FabRegularModel.Model` | sets fab type. Defaults to *FabType.Medium* |
+| `setFabType(fabType : FabType)` | `FabRegularModel.Model` | sets fab type. Defaults to *FabType.MEDIUM* |
 | `getFabType()` | `FabType` | return current fab type. |
 
 ### FabType enum
 
 | Name | Description                |
 | :-------- | :------------------------- |
-| `Small` | Small fab as per material design 3 specifications. |
-| `Medium` | Medium fab as per material design 3 specifications. |
-| `Large` | Large fab as per material design 3 specifications. |
+| `SMALL` | Small fab as per material design 3 specifications. |
+| `MEDIUM` | Medium fab as per material design 3 specifications. |
+| `LARGE` | Large fab as per material design 3 specifications. |
 
 ### Usage/Examples
 
-#### Small FAB
+#### SMALL FAB
 
 ![small_fab.png](images/small_fab.png)
 
@@ -80,8 +80,8 @@ import {FAB_regular, FabRegularModel, FabType} from '@ohos/material-fab'
 
 @Entry
 @Component
-struct Small_fab_demo {
-  model : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.Small)
+struct SMALL_fab_demo {
+  model : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.SMALL)
 
   aboutToAppear(){
     this.model.setPosition({x : 100, y : 300})
@@ -92,7 +92,7 @@ struct Small_fab_demo {
       FAB_regular({
         model : this.model,
         onClick : (event) => {
-          AlertDialog.show({ message: 'You clicked Small fab' })
+          AlertDialog.show({ message: 'You clicked SMALL fab' })
         }
       })
     }.height('100%')
@@ -100,7 +100,7 @@ struct Small_fab_demo {
 }
 ```
 
-#### Medium FAB
+#### MEDIUM FAB
 
 ![medium_fab.png](images/medium.png)
 
@@ -109,8 +109,8 @@ import {FAB_regular, FabRegularModel, FabType} from '@ohos/material-fab'
 
 @Entry
 @Component
-struct Medium_fab_demo {
-  model : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.Medium)
+struct MEDIUM_fab_demo {
+  model : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.MEDIUM)
 
   aboutToAppear(){
     this.model.setPosition({x : 100, y : 300})
@@ -122,7 +122,7 @@ struct Medium_fab_demo {
       FAB_regular({
         model : this.model,
         onClick : (event) => {
-          AlertDialog.show({ message: 'You clicked Medium fab' })
+          AlertDialog.show({ message: 'You clicked MEDIUM fab' })
         }
       })
     }.height('100%')
@@ -130,7 +130,7 @@ struct Medium_fab_demo {
 }
 ```
 
-#### Large FAB
+#### LARGE FAB
 
 ![large_fab.png](images/large_fab.png)
 
@@ -139,8 +139,8 @@ import {FAB_regular, FabRegularModel, FabType} from '@ohos/material-fab'
 
 @Entry
 @Component
-struct Large_fab_demo {
-  model : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.Large)
+struct LARGE_fab_demo {
+  model : FabRegularModel.Model = new FabRegularModel.Model().setFabType(FabType.LARGE)
 
   aboutToAppear(){
     this.model.setPosition({x : 100, y : 300})
@@ -152,7 +152,7 @@ struct Large_fab_demo {
       FAB_regular({
         model : this.model,
         onClick : (event) => {
-          AlertDialog.show({ message: 'You clicked Large fab' })
+          AlertDialog.show({ message: 'You clicked LARGE fab' })
         }
       })
     }.height('100%')
