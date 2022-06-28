@@ -20,7 +20,7 @@ namespace FabExtendedModel {
   const DEFAULT_FAB_LABEL: string | Resource = 'Add'
   const DEFAULT_FONT_COLOR: ResourceColor = Color.White
   const DEFAULT_FONT_STYLE: FontStyle = FontStyle.Normal
-  const DEFAULT_FONT_SIZE: number | string | Resource = '24vp'
+  const DEFAULT_FONT_SIZE: number | string | Resource = '24fp'
   const DEFAULT_FONT_WEIGHT: FontWeight = FontWeight.Bold
   const DEFAULT_TEXT_PADDING: Padding = { left: '20vp', right: '20vp' }
   const DEFAULT_FAB_MAX_WIDTH: Length = '200vp'

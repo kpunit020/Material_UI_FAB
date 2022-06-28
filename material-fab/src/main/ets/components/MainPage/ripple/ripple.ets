@@ -38,7 +38,7 @@ export struct Ripple {
   }
 
   build() {
-    if (this.show_ripple && this.model != undefined) {
+    if (this.show_ripple && this.model != undefined && this.model != null) {
       Flex() {
         Circle()
           .fill(this.model.getRippleColor())
@@ -55,7 +55,7 @@ export struct Ripple {
       }
       .clip(this.model.getIsBounded())
       .size(this.model.getRippleContainerSize())
-      .position({ x: 0, y: 0 })
+      .position({ x: '0vp', y: '0vp' })
       .zIndex(this.model.getZIndex())
       .border(this.model.getBorder())
       .onAppear(() => {

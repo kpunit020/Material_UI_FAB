@@ -24,11 +24,13 @@ export struct FAB_regular {
   onClick: (event?: ClickEvent) => void
 
   build() {
-    if (this.model != undefined) {
+    if (this.model != undefined && this.model != null) {
       Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
-        Image(this.model.getFabIcon())
-          .size(this.model.getIconSize())
-          .objectFit(ImageFit.Cover)
+        if (this.model.getFabIcon() != undefined && this.model.getFabIcon() != null) {
+          Image(this.model.getFabIcon())
+            .size(this.model.getIconSize())
+            .objectFit(ImageFit.Cover)
+        }
 
         Ripple({
           model: this.model.getRippleModel(),

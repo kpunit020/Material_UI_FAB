@@ -23,51 +23,53 @@ export struct FAB_extended {
   onClick: (event?: ClickEvent) => void
 
   build() {
-    Row() {
-      if (this.model.getFabIcon()) {
-        Image(this.model.getFabIcon())
-          .size(this.model.getIconSize())
-          .objectFit(ImageFit.Cover)
-          .margin(this.model.getIconPadding())
+    if (this.model != null && this.model != undefined) {
+      Row() {
+        if (this.model.getFabIcon() != undefined) {
+          Image(this.model.getFabIcon())
+            .size(this.model.getIconSize())
+            .objectFit(ImageFit.Cover)
+            .margin(this.model.getIconPadding())
+        }
+
+        Text(this.model.getFabLabel())
+          .fontColor(this.model.getFontColor())
+          .fontStyle(this.model.getFontStyle())
+          .fontSize(this.model.getFontSize())
+          .fontWeight(this.model.getFontWeight())
+          .textOverflow({ overflow: TextOverflow.Ellipsis })
+          .maxLines(1)
+          .margin(this.model.getTextPadding())
+          .alignSelf(ItemAlign.Auto)
+          .align(Alignment.Start)
+
+        Ripple({
+          model: this.model.getRippleModel(),
+          show_ripple: $show_ripple
+        })
+
       }
-
-      Text(this.model.getFabLabel())
-        .fontColor(this.model.getFontColor())
-        .fontStyle(this.model.getFontStyle())
-        .fontSize(this.model.getFontSize())
-        .fontWeight(this.model.getFontWeight())
-        .textOverflow({ overflow: TextOverflow.Ellipsis })
-        .maxLines(1)
-        .margin(this.model.getTextPadding())
-        .alignSelf(ItemAlign.Auto)
-        .align(Alignment.Start)
-
-      Ripple({
-        model: this.model.getRippleModel(),
-        show_ripple: $show_ripple
+      .constraintSize({ minWidth: '80vp', maxWidth: this.model.getFabMaxWidth() })
+      .height('56vp')
+      .backgroundColor(this.model.getBackgroundColor())
+      .border(this.model.getBorder())
+      .zIndex(Number.MAX_VALUE)
+      .shadow({ radius: 30, color: Color.Gray, offsetY: 16 })
+      .position(this.model.getPosition())
+      .onAreaChange((oldArea, newArea) => {
+        this.model.setFabSize(newArea)
       })
+      .onClick((event) => {
+        this.model.getRippleModel().setRippleStartPosition({ x: event.x, y: event.y })
+        this.show_ripple = true
 
+        if (this.onClick) {
+          setTimeout(() => {
+            this.onClick(event)
+          }, this.model.getRippleModel().getRippleDuration())
+        }
+      })
     }
-    .constraintSize({ minWidth: '80vp', maxWidth: this.model.getFabMaxWidth() })
-    .height('56vp')
-    .backgroundColor(this.model.getBackgroundColor())
-    .border(this.model.getBorder())
-    .zIndex(Number.MAX_VALUE)
-    .shadow({ radius: 30, color: Color.Gray, offsetY: 16 })
-    .position(this.model.getPosition())
-    .onAreaChange((oldArea, newArea) => {
-      this.model.setFabSize(newArea)
-    })
-    .onClick((event) => {
-      this.model.getRippleModel().setRippleStartPosition({ x: event.x, y: event.y })
-      this.show_ripple = true
-
-      if (this.onClick) {
-        setTimeout(() => {
-          this.onClick(event)
-        }, this.model.getRippleModel().getRippleDuration())
-      }
-    })
   }
 }
 

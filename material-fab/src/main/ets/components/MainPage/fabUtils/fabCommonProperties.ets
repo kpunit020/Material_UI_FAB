@@ -16,12 +16,12 @@
 import { RippleModel } from '../ripple/rippleModel'
 
 const DEFAULT_FAB_ICON: ResourceStr = undefined
-const DEFAULT_ICON_SIZE: SizeOptions = undefined
-const DEFAULT_ICON_PADDING: Padding = undefined
-const DEFAULT_FAB_SIZE: SizeOptions = undefined
+const DEFAULT_ICON_SIZE: SizeOptions = {}
+const DEFAULT_ICON_PADDING: Padding = {}
+const DEFAULT_FAB_SIZE: SizeOptions = {}
 const DEFAULT_BACKGROUND_COLOR: ResourceColor = Color.Blue
 const DEFAULT_BORDER: BorderOptions = {}
-const DEFAULT_POSITION: Position = { x: 0, y: 0 }
+const DEFAULT_POSITION: Position = { x: '0vp', y: '0vp' }
 
 class CommonProperties {
   protected fabIcon: ResourceStr = DEFAULT_FAB_ICON

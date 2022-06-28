@@ -17,8 +17,8 @@ namespace RippleModel {
   const DEFAULT_RIPPLE_DURATION: number = 300
   const DEFAULT_IS_BOUNDED: boolean = true
   const DEFAULT_RIPPLE_COLOR: ResourceColor = Color.White
-  const DEFAULT_CIRCLE_SIZE: number = 10
-  const DEFAULT_OPACITY: number = 0.4
+  const DEFAULT_CIRCLE_SIZE: Length = '10vp'
+  const DEFAULT_OPACITY: number = 0.3
   const DEFAULT_RIPPLE_SCALE: number = 0
   const DEFAULT_RIPPLE_START_POSITION: Position = { x: '0vp', y: '0vp' }
   const DEFAULT_RIPPLE_CONTAINER_SIZE: SizeOptions = { height: '56vp', width: '96vp' }
@@ -29,7 +29,7 @@ namespace RippleModel {
     private rippleDuration: number = DEFAULT_RIPPLE_DURATION
     private isBounded: boolean = DEFAULT_IS_BOUNDED
     private rippleColor: ResourceColor = DEFAULT_RIPPLE_COLOR
-    private circleSize: number = DEFAULT_CIRCLE_SIZE
+    private circleSize: Length = DEFAULT_CIRCLE_SIZE
     private opacity: number = DEFAULT_OPACITY
     private rippleScale: number = DEFAULT_RIPPLE_SCALE
     private rippleStartPosition: Position = DEFAULT_RIPPLE_START_POSITION
@@ -68,10 +68,10 @@ namespace RippleModel {
     }
 
     getCircleSize(): number {
-      return this.circleSize
+      return Model.len2num(this.circleSize)
     }
 
-    setCircleSize(circleSize: number): Model {
+    setCircleSize(circleSize: Length): Model {
       if (circleSize < 0) {
         throw new Error("Invalid circle size. Please pass valid input")
       }
@@ -143,11 +143,11 @@ namespace RippleModel {
     }
 
     getCirclePosX(): number {
-      return Model.len2num(this.rippleStartPosition.x) - this.circleSize / 2
+      return Model.len2num(this.rippleStartPosition.x) - Model.len2num(this.circleSize) / 2
     }
 
     getCirclePosY(): number {
-      return Model.len2num(this.rippleStartPosition.y) - this.circleSize / 2
+      return Model.len2num(this.rippleStartPosition.y) - Model.len2num(this.circleSize) / 2
     }
 
     reset(): Model {
