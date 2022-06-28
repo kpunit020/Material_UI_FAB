@@ -90,7 +90,7 @@ class CommonProperties {
 
   setBorder(border: BorderOptions): CommonProperties {
     this.border = (border != null && border != undefined) ? border : DEFAULT_BORDER
-    this.rippleModel.setBorder(this.border)
+    this.rippleModel.setBorder({radius : this.border.radius})
     return this
   }
 
