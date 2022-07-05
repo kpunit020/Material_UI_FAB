@@ -1,14 +1,14 @@
-# material-fab
+# materialfab
 
 Material FAB replicates the floating action buttons(FAB) using *material design 3* specifications in openHarmony.
 
 ## Dependencies
 
-For using material-fab in your app, add the below dependency in entry/package.json
+For using materialfab in your app, add the below dependency in entry/package.json
 
 ```
 "dependencies": {
-    "@ohos/material-fab": "file:../material-fab"
+    "@ohos/materialfab": "file:../materialfab"
   }
 ```
 
@@ -17,7 +17,7 @@ For using material-fab in your app, add the below dependency in entry/package.js
 Import all components at once
 
 ```ets
-import {FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel} from '@ohos/material-fab'
+import {FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel} from '@ohos/materialfab'
 ```
 
 ## Screenshots
@@ -76,7 +76,7 @@ Implementation of Regular FAB buttons with size options as *SMALL*, *MEDIUM* and
 ![small_fab.png](images/small_fab.png)
 
 ```
-import {FAB_regular, FabRegularModel, FabType} from '@ohos/material-fab'
+import {FAB_regular, FabRegularModel, FabType} from '@ohos/materialfab'
 
 @Entry
 @Component
@@ -105,7 +105,7 @@ struct SMALL_fab_demo {
 ![medium_fab.png](images/medium.png)
 
 ```
-import {FAB_regular, FabRegularModel, FabType} from '@ohos/material-fab'
+import {FAB_regular, FabRegularModel, FabType} from '@ohos/materialfab'
 
 @Entry
 @Component
@@ -135,7 +135,7 @@ struct MEDIUM_fab_demo {
 ![large_fab.png](images/large_fab.png)
 
 ```
-import {FAB_regular, FabRegularModel, FabType} from '@ohos/material-fab'
+import {FAB_regular, FabRegularModel, FabType} from '@ohos/materialfab'
 
 @Entry
 @Component
@@ -190,7 +190,7 @@ Implementation of Extended FAB buttons with an options for addition of leading i
 ![with_icon.png](images/extended_with_icon.png)
 
 ```
-import {FAB_extended, FabExtendedModel} from '@ohos/material-fab'
+import {FAB_extended, FabExtendedModel} from '@ohos/materialfab'
 
 @Entry
 @Component
@@ -220,7 +220,7 @@ struct extended_fab_demo {
 ![without_icon.png](images/extended_without_icon.png)
 
 ```
-import {FAB_extended, FabExtendedModel} from '@ohos/material-fab'
+import {FAB_extended, FabExtendedModel} from '@ohos/materialfab'
 
 @Entry
 @Component
@@ -247,7 +247,7 @@ struct extended_fab_demo {
 
 ## Compatibility
 
-Supports OpenHarmony API version 8
+Supports OpenHarmony API version 9
 
 ## Code Contribution
 

@@ -13,8 +13,7 @@
  * limitations under the License.
  */
 
-
-import { FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel } from '@ohos/material-fab'
+import { FAB_extended, FAB_regular, FabType, FabExtendedModel, FabRegularModel } from '@ohos/materialfab'
 
 @Entry
 @Component
